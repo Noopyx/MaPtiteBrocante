@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Retour"
+        android:id="@+id/retour"
+        android:layout_alignTop="@+id/inscription"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="retourAcceuil"
+        android:background="@drawable/border_button"
+        android:layout_gravity="left|bottom" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Se connecter"
+        android:id="@+id/inscription"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="validation"
+        android:background="@drawable/border_button"
+        android:layout_gravity="right|bottom" />
+
+
+
+    <RelativeLayout
+        android:layout_width="245dp"
+        android:layout_height="105dp"
+        android:layout_gravity="center"
+        android:background="@drawable/border_grey">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/pwd"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/border"
+            android:layout_marginTop="5dp"
+            android:hint="Mot de passe"
+            android:layout_gravity="left|center_vertical"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:text="user" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/output"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/pwd"
+            android:layout_alignLeft="@+id/pwd"
+            android:layout_alignStart="@+id/pwd"
+            android:layout_alignRight="@+id/pwd"
+            android:layout_alignEnd="@+id/pwd"
+            android:background="@drawable/border"
+            android:visibility="invisible"
+            android:layout_row="0"
+            android:layout_column="0" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/login"
+            android:layout_above="@+id/pwd"
+            android:layout_alignLeft="@+id/pwd"
+            android:layout_alignStart="@+id/pwd"
+            android:singleLine="true"
+            android:hint="Login"
+            android:background="@drawable/border"
+            android:layout_gravity="right|top"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:text="user" />
+    </RelativeLayout>
+
+</FrameLayout>
