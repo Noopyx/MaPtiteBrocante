@@ -1,7 +1,12 @@
 
 package com.noopyx.map;
 
+import android.util.Log;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * Created by Quentin on 29/03/2016.
@@ -9,7 +14,7 @@ import java.util.Date;
 public class Brocante {
 
     private int codePostale;
-    private Date date;
+    private GregorianCalendar date;
     private String departement;
     private String emailOrg;
     private String heureFin;
@@ -23,7 +28,7 @@ public class Brocante {
     private boolean handicap;
     private double prix;
 
-    public Brocante (String libelle, Date date, String ville) {
+    public Brocante (String libelle, GregorianCalendar date, String ville) {
         this.libelle = libelle;
         this.date = date;
         this.ville = ville;
@@ -41,7 +46,12 @@ public class Brocante {
     }
 
     public void setHeureFin(String heureFin) {
-        this.heureFin = heureFin;
+        if(heureFin.length() <= 2)
+            this.heureFin = heureFin+"h00";
+        else if(heureFin.length() == 3 )
+            this.heureFin = heureFin.substring(0,2)+"h00";
+        else
+            this.heureFin = heureFin.substring(0,2)+"h"+heureFin.substring(3);
     }
 
     public String getLibelle() {
@@ -124,11 +134,21 @@ public class Brocante {
         this.codePostale = codePostale;
     }
 
+    public GregorianCalendar getGregorian () {
+        return date;
+    }
     public String getDate() {
-        return date.getDay()+"/"+date.getMonth()+"/"+date.getYear()+"\n   "+date.getHours()+":"+date.getMinutes()+" - "+heureFin;
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat sdf2 = new SimpleDateFormat("HH");
+        SimpleDateFormat sdf3 = new SimpleDateFormat("mm");
+        sdf.setCalendar(date);
+        sdf2.setCalendar(date);
+        sdf3.setCalendar(date);
+        return sdf.format(date.getTime())+"\n"+sdf2.format(date.getTime())+"h"+sdf3.format(date.getTime())+" - "+heureFin;
+        //return date.get(Calendar.DATE)+"\\"+date.get(Calendar.MONTH)+"\\"+date.get(Calendar.YEAR)+"\n   "+date.get(Calendar.HOUR)+"h"+date.get(Calendar.MINUTE)+" - "+heureFin;
     }
 
-    public void setDate(Date date) {
+    public void setDate(GregorianCalendar date) {
         this.date = date;
     }
 

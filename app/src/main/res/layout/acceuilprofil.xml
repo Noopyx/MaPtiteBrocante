@@ -31,7 +31,6 @@
                 android:layout_height="wrap_content"
                 android:text="Brocante(s) disponibles : "
                 android:id="@+id/textView2"
-                android:textSize="20dp"
                 android:textColor="#bc2c2c"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true" />
@@ -44,20 +43,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Profil"
-        android:id="@+id/button3"
-        android:background="#e76262"
+        android:id="@+id/profil"
+        android:background="@drawable/border_button_profil"
         android:onClick="setMap"
         android:layout_gravity="right"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/button4" />
+        android:layout_alignTop="@+id/carte" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Carte"
-        android:id="@+id/button4"
-        android:background="#e76262"
+        android:id="@+id/carte"
+        android:background="@drawable/border_button_profil"
         android:onClick="setMap"
         android:layout_gravity="right"
         android:layout_alignParentBottom="true"

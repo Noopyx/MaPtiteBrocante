@@ -9,12 +9,12 @@
         android:layout_height="170dp"
         android:layout_gravity="center"
         android:background="@drawable/border_grey"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
-        android:paddingBottom="10dp">
+        android:paddingBottom="10dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,9 +23,10 @@
         android:id="@+id/newlogin"
         android:singleLine="true"
         android:hint="Votre login"
+        android:background="@drawable/border"
         android:layout_above="@+id/mdp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/border"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -40,15 +41,20 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"/>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/mdp2"
-        android:background="@drawable/border"
-        android:hint="Retapez le mdp"
-        android:layout_below="@+id/mdp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/output"
+            android:layout_below="@+id/mdp"
+            android:layout_marginTop="10dp"
+            android:layout_alignRight="@+id/mdp"
+            android:layout_alignEnd="@+id/mdp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:visibility="invisible"
+            android:layout_alignParentBottom="true" />
+
     </RelativeLayout>
     <TextView
         android:layout_width="fill_parent"
@@ -77,11 +83,12 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Se connecter"
-        android:id="@+id/connect"
-        android:onClick="validation"
+        android:text="S&apos;inscrire"
+        android:id="@+id/inscript"
+        android:onClick="inscription"
         android:background="@drawable/border_button"
         android:layout_alignTop="@+id/retour"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:nestedScrollingEnabled="false" />
 </RelativeLayout>

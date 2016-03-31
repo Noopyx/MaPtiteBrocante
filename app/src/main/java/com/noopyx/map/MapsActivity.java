@@ -148,7 +148,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 200, 1, locationListener);
 
-        addBrocante(50.650070, 3.074831, "Chez Corwin !", "Brocante de proximité");
+        //addBrocante(50.650070, 3.074831, "Chez Corwin !", "Brocante de proximité");
 
         for(String libelle : listMarker.keySet()) {
             new getLatLngAdress(listMarker.get(libelle)[0],listMarker.get(libelle)[1],listMarker.get(libelle)[2]).execute();
